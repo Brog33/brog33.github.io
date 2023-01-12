@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Video embed</title>
+
+   <script>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    let url = params.url; // "some_value"
+  </script>
+    
   </head>
   <body>
     <video controls="controls">
